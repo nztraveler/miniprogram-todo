@@ -1,0 +1,10 @@
+<!--component/input/input.wxml-->
+<view class="input-container">
+  <view wx:if="{{prefix}}" class="icon-prefix {{prefix.classname||''}}" style="{{prefix.style||''}}">
+    <slot name="prefix" />
+  </view>
+  <input value="{{value}}" placeholder="{{placeholder}}" class="input" bindconfirm="onConfirm" />
+  <view wx:if="{{suffix}}" class="icon-suffix {{suffix.classname||''}}" style="{{suffix.style||''}}">
+    <slot name="suffix" />
+  </view>
+</view>

@@ -1,0 +1,9 @@
+/**app.wxss**/
+
+page {
+  color: #9B9B9B;
+}
+
+.container {
+  margin: 20rpx;
+}

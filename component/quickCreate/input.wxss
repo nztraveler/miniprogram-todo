@@ -1,0 +1,6 @@
+/* component/input/input.wxss */
+.icon-add{
+  font-size: 32rpx;
+  color: green;
+  line-height: 80rpx;
+}

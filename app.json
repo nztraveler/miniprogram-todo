@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "pages/create/create",
+    "pages/index/index"
+    
+  ],
+  "sitemapLocation": "sitemap.json"
+}

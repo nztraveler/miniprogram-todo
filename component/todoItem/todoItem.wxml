@@ -1,0 +1,5 @@
+<view class="{{item.isFinished?'finished':''}} todo-item" bind:tap="onFinishedToggle">
+  <icon class="todo-item__check-icon" type="{{item.isFinished?'success':'circle'}}" />
+  <text class="todo-item__text">{{item.value}}</text>
+  <icon type="clear" class="todo-item__delete-icon" bind:tap="onDelete" mark:delete="deleteIcon" />
+</view>

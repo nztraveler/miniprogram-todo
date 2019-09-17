@@ -1,0 +1,24 @@
+/* component/input/input.wxss */
+.todo-item {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+.todo-item__text {
+  flex: 1 1 auto;
+}
+.finished .todo-item__text{
+  color: #ddd;
+  text-decoration: line-through;
+}
+.todo-item__check-icon{
+  text-align: center;
+  width: 120rpx;
+  /* flex: 1 0 60rpx;  */
+}
+
+.todo-item__delete-icon {
+  width: 80rpx;
+  /* flex: 1 0 40rpx; */
+}
