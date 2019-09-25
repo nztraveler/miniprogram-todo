@@ -4,10 +4,10 @@
     <text class="create-icon">添加待办</text>
   </view>
 
-  <view wx:if="{{items.length>0}}">
+  <view wx:if="{{store.todo.ids.length>0}}">
     <view bind:deleteItem="onDelete" bind:finishToggle="onFinishToggle" class="todo-container">
       <block wx:for="{{items}}" wx:key="**this">
-        <todo-item item="{{itemDetail[item]}}" />
+        <todo-item item="{{store.todo.items[item]}}" />
       </block>
     </view>
     <view class="option-area">
