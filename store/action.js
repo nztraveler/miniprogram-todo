@@ -58,10 +58,9 @@ export const deleteOneTodo = (id)=>{
 }
 
 export const finishToggleOne = (id)=>{
-  console.log('finishToggleOne',JSON.stringify(todo.items))
- todo.items[id].isFinished = !todo.items[id].isFinished;
-
-//  todo.items = todo.items;
- console.log('finishToggleOne',JSON.stringify(todo.items),id)
+  todo.items = { 
+    ...todo.items,
+     [id]: { ...todo.items[id], isFinished: !todo.items[id].isFinished }
+     };
  updateFinishedCount();
 }
