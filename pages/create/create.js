@@ -1,6 +1,5 @@
-// pages/create/create.js
 import create from '../../utils/create.js';
-import {store, emitter} from '../../store/store.js';
+import {store} from '../../store/store.js';
 import { createTodo } from '../../store/action.js';
 
 create(store,{
@@ -15,7 +14,20 @@ create(store,{
     }
     createTodo(value);
     console.log(e)
+    wx.navigateTo({
+      url: '/pages/index/index',
+      success: (result) => {
+        
+      },
+      fail: () => {},
+      complete: () => {}
+    });
+      
+  },
+  onLoad(){
+
   }
+
 })
 
 // Page({

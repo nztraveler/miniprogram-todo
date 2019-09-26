@@ -15,10 +15,10 @@ Component({
     onFinishedToggle(e) {
       if(e.mark.delete) return;
       console.log('onFinishedToggle', e);
-      const isFinished = !this.properties.item.isFinished;
+      // const isFinished = !this.properties.item.isFinished;
       // this.setData({ isFinished })
       // console.log('onFinishedToggle', this.data.isFinished, this.properties.item.isFinished, isFinished);
-      this.triggerEvent('finishToggle', { id: this.data.item.id, isFinished  }, { bubbles: true })
+      this.triggerEvent('finishToggle', { id: this.data.item.id  }, { bubbles: true })
     },
 
     onDelete(e) {
@@ -26,5 +26,18 @@ Component({
     },
 
   },
+
+  lifetimes:{
+    attached: function(){
+      console.log('attached', JSON.stringify(this.properties), JSON.stringify(this.data) )
+    },
+    created: function(){
+      console.log('created', JSON.stringify(this.properties), JSON.stringify(this.data))
+    },
+    ready: function(){
+      console.log('created', JSON.stringify(this.properties), JSON.stringify(this.data))
+    }
+
+  }
 
 })

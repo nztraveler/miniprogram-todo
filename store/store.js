@@ -2,12 +2,15 @@ import create from '../utils/create.js';
 
 export const emitter = create.emitter;
 export const store = {
-  todo: {
-    ids: [],
-    items: {}
-  },
-  log: {
-    dateSort: [],
-    item: {}
+  data: {
+    todo: {
+      ids: [],
+      items: {},
+      finishedCount: 0,
+    },
+    log: {
+      dateSort: [],
+      items: {}
+    }
   }
 }

@@ -1,12 +1,13 @@
 import create from '../../utils/create.js';
-import store from '../../store/store.js';
+import { store } from '../../store/store.js';
+import { createTodo, deleteOneTodo, finishToggleOne } from '../../store/action.js';
 
-create(store,{
+create(store, {
   data: {
-    count: 0,
-    items: [],
-    itemDetail: {},
-    finishedCount: 0,
+    // count: 0,
+    // items: [],
+    // itemDetail: {},
+    // finishedCount: 0,
   },
   updateFinished: function () {
     const finishedCount = this.data.items.filter(item => !this.data.itemDetail[item].isFinished).length;
@@ -16,38 +17,31 @@ create(store,{
 
   onCreate(e) {
     console.log(e);
-    const count = this.data.count + 1;
+    // const count = this.data.count + 1;
     const newItem = {
-      id: count,
-      value: e.detail.value,
-      isFinished: false,
+      // id: count,
+      content: e.detail.value,
+      label: 'sf',
+      notes: 'sdf'
+      // isFinished: false,
     }
-    console.log({ newItem })
-    this.setData({ itemDetail: { ...this.data.itemDetail, [count]: newItem }, items: [...this.data.items, count], count }, this.updateFinished)
+    // console.log({ newItem })
+    createTodo(newItem);
+    // this.setData({ itemDetail: { ...this.data.itemDetail, [count]: newItem }, items: [...this.data.items, count], count }, this.updateFinished)
   },
 
   onDelete(e) {
     console.log('ondelete', e)
     const deleteID = e.detail.id;
-    const newItems = this.data.items.reduce((acc, item) => {
-      if (item === deleteID) return acc;
-      console.log({ acc, item })
-      acc.push(item)
-      return acc;
-    }, [])
-    console.log({ newItems })
-    // const finishedCount = this.updateFinished(newItems,this.data.itemDetail)
-    this.setData({
-      items: newItems,
-      // finishedCount
-    }, this.updateFinished)
+    deleteOneTodo(deleteID);
   },
 
   onFinishToggle(e) {
     console.log(e)
     const finishID = e.detail.id;
-    const path = `itemDetail.${finishID}.isFinished`
-    this.setData({ [path]: e.detail.isFinished }, this.updateFinished)
+    finishToggleOne(finishID);
+    // const path = `itemDetail.${finishID}.isFinished`
+    // this.setData({ [path]: e.detail.isFinished }, this.updateFinished)
   },
 
   onToggleAll() {
