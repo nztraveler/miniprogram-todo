@@ -1,6 +1,7 @@
 import create from '../../utils/create.js';
 import {store} from '../../store/store.js';
-import { createTodo } from '../../store/action.js';
+import actionList,{createTodo} from '../../store/action.js';
+const {deleteOneTodo, finishToggleOne, finishToggleAll, deleteAllFinished, deleteOneLog} = actionList;
 
 create(store,{
   onSubmit(e) {

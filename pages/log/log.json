@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "log-item":"../../component/logItem/logItem"
+  }
+}

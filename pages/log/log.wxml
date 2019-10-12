@@ -1,0 +1,11 @@
+<!--pages/log/log.wxml-->
+<view class="log-container">
+  <block wx:for="{{store.log.dateSort}}" wx:key="*this.date.value">
+  <view class="log-date">
+  {{item.date.formatValue}}  
+  </view>
+  <block wx:for="{{item.ids}}" wx:key="*this" wx:for-item="id">
+    <log-item logData="{{store.log.items[id]}}"/>
+  </block>
+</block>
+</view>

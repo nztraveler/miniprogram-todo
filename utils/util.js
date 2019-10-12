@@ -27,3 +27,5 @@ export const getDateOrder = (dateArray, date) => {
   });
   return order;
 }
+
+export const createID = () => Math.floor(Date.now() * Math.random() * 100) + ''

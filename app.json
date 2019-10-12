@@ -1,8 +1,28 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/create/create",
-    "pages/index/index"
-    
+    "pages/log/log"
   ],
+  "tabBar": {
+    "color": "#9B9B9B",
+    "selectedColor": "#7ED321",
+    "backgroundColor": "#F8F8F8",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "TODO",
+        "iconPath": "assets/todo.png",
+        "selectedIconPath": "assets/todo-active.png"
+      },
+      {
+        "pagePath": "pages/log/log",
+        "text": "History",
+        "iconPath": "assets/history.png",
+        "selectedIconPath": "assets/history-active.png"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }

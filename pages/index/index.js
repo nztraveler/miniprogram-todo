@@ -1,7 +1,7 @@
 import create from '../../utils/create.js';
 import { store } from '../../store/store.js';
-import { createTodo, deleteOneTodo, finishToggleOne } from '../../store/action.js';
-
+import actionList,{createTodo} from '../../store/action.js';
+const {deleteOneTodo, finishToggleOne, finishToggleAll, deleteAllFinished, deleteOneLog} = actionList;
 create(store, {
   data: {
     // count: 0,
@@ -9,11 +9,11 @@ create(store, {
     // itemDetail: {},
     // finishedCount: 0,
   },
-  updateFinished: function () {
-    const finishedCount = this.data.items.filter(item => !this.data.itemDetail[item].isFinished).length;
-    this.setData({ finishedCount });
-    return finishedCount;
-  },
+  // updateFinished: function () {
+  //   const finishedCount = this.data.items.filter(item => !this.data.itemDetail[item].isFinished).length;
+  //   this.setData({ finishedCount });
+  //   return finishedCount;
+  // },
 
   onCreate(e) {
     console.log(e);
@@ -21,8 +21,8 @@ create(store, {
     const newItem = {
       // id: count,
       content: e.detail.value,
-      label: 'sf',
-      notes: 'sdf'
+      label: '',
+      notes: ''
       // isFinished: false,
     }
     // console.log({ newItem })
@@ -37,26 +37,20 @@ create(store, {
   },
 
   onFinishToggle(e) {
-    console.log(e)
+    console.log('onFinishToggle',e)
     const finishID = e.detail.id;
+    // console.log({})
     finishToggleOne(finishID);
     // const path = `itemDetail.${finishID}.isFinished`
     // this.setData({ [path]: e.detail.isFinished }, this.updateFinished)
   },
 
   onToggleAll() {
-    const toggleValue = this.data.finishedCount > 0;
-    this.data.items.map(id => this.data.itemDetail[id].isFinished = toggleValue)
-    this.setData({ itemDetail: this.data.itemDetail }, this.updateFinished)
+    finishToggleAll();
   },
 
   onDeleteAllFinished() {
-    const newItems = this.data.items.reduce((acc, id) => {
-      if (this.data.itemDetail[id].isFinished === true) return acc;
-      acc.push(id)
-      return acc;
-    }, []);
-    this.setData({ items: newItems })
+    deleteAllFinished();
   }
 })
 
@@ -111,7 +105,7 @@ create(store, {
 //   },
 
 //   onToggleAll() {
-//     const toggleValue = this.data.finishedCount>0;
+//     const toggleValue = this.data.unFinishedCount>0;
 //     this.data.items.map(id => this.data.itemDetail[id].isFinished = toggleValue)
 //     this.setData({ itemDetail: this.data.itemDetail }, this.updateFinished)
 //   },

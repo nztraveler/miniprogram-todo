@@ -1,7 +1,7 @@
 <view class="container">
   <view class="create-area">
     <quick-create-input class="quick-create" bind:createItem="onCreate"></quick-create-input>
-    <text class="create-icon">添加待办</text>
+    <navigator url="../create/create"><text class="create-icon">添加待办</text></navigator>
   </view>
 
   <view wx:if="{{store.todo.ids.length>0}}">
@@ -11,8 +11,8 @@
       </block>
     </view>
     <view class="option-area">
-      <text bind:tap="onToggleAll">{{store.todo.finishedCount>0?'全部完成':'全部重启' }}</text>
-      <text wx:if="{{store.todo.finishedCount>0}}"> {{store.todo.finishedCount}}未完成</text>
+      <text bind:tap="onToggleAll">{{store.todo.unFinishedCount>0?'全部完成':'全部重启' }}</text>
+      <text wx:if="{{store.todo.unFinishedCount>0}}"> {{store.todo.unFinishedCount}}未完成</text>
       <text bind:tap="onDeleteAllFinished">清空所有已完成</text>
     </view>
   </view>

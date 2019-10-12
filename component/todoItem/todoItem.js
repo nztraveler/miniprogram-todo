@@ -7,14 +7,14 @@ Component({
 
   },
 
-  // data: {
-  //   isFinished: false,
-  // },
+  data: {
+    isShowNote: false,
+  },
 
   methods: {
     onFinishedToggle(e) {
-      if(e.mark.delete) return;
-      console.log('onFinishedToggle', e);
+      if(e.mark.delete||e.mark.showNote) return;
+      console.log('onFinishedToggle', e,  this.data.item);
       // const isFinished = !this.properties.item.isFinished;
       // this.setData({ isFinished })
       // console.log('onFinishedToggle', this.data.isFinished, this.properties.item.isFinished, isFinished);
@@ -25,6 +25,9 @@ Component({
       this.triggerEvent('deleteItem', { id: this.data.item.id }, { bubbles: true })
     },
 
+    onToggleNote(){
+      this.setData({isShowNote: !this.data.isShowNote})
+    }
   },
 
   lifetimes:{
