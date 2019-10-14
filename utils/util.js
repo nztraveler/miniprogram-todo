@@ -4,9 +4,11 @@ export const getFormatDate = (value) => {
   const day = date.getDate();
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
+  const minute = date.getMinutes();
+  console.log({minute})
   return {
     value: date.valueOf(),
-    formatValue: `${year}-${month}-${day}`
+    formatValue: `${year}-${month}-${day}-${minute}分钟`
   }
 }
 

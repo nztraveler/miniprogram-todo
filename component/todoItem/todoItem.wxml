@@ -4,6 +4,6 @@
     <text>{{item.content}}</text>
     <text wx:if="{{isShowNote}}">{{item.notes}}</text>
   </view>
-  <icon type="info" color="{{isShowNote?'#7ED321':'#ddd'}}" size="20" bind:tap="onToggleNote" mark:showNote="showNote" />
+  <icon wx:if="{{item.notes}}" type="info" color="{{isShowNote?'#7ED321':'#ddd'}}" size="20" bind:tap="onToggleNote" mark:showNote="showNote" />
   <icon type="clear" size="20" class="todo-item__delete-icon" bind:tap="onDelete" mark:delete="deleteIcon" />
 </view>

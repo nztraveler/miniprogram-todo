@@ -1,23 +1,26 @@
 /* component/logItem/logItem.wxss */
-.log-item{
-  display:flex;
-  padding-bottom: 10rpx;
+
+.log-item {
+  display: flex;
+  padding: 20rpx 0;
   align-items: center;
-  font-size: 28rpx;
-  border-bottom: 1rpx solid #9B9B9B;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #ddd;
 }
 
-.log-item--action{
-  margin-right: 10rpx;
-  color: #7ED321;
+.log-item--action {
+  flex: 0 0 auto;
+  margin-right: 30rpx;
+  color: #7ed321;
 }
 
-.log-item--content{
+.log-item--content {
   flex: 1 1 auto;
-  color: #9B9B9B;
+  color: #9b9b9b;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.log-item--clear{
-  margin-left: 10rpx;
+.log-item--clear {
+  margin-left: 20rpx;
 }

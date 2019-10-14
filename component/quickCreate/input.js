@@ -5,7 +5,6 @@ Component({
       show: true
     },
     onConfirm: ()=>{
-      console.log(this,'this')
      this.onConfirm();
     },
 

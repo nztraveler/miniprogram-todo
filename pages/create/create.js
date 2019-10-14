@@ -15,7 +15,7 @@ create(store,{
     }
     createTodo(value);
     console.log(e)
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/index/index',
       success: (result) => {
         

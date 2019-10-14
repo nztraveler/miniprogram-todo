@@ -1,10 +1,19 @@
 <!--pages/log/log.wxml-->
+<wxs module="tools">
+  var reverse = function(arr){
+    return arr.reverse();
+  }
+  module.exports = {
+    reverse: reverse
+  }
+</wxs>
+
 <view class="log-container">
-  <block wx:for="{{store.log.dateSort}}" wx:key="*this.date.value">
+  <block wx:for="{{tools.reverse(store.log.dateSort)}}" wx:key="*this.date.value">
   <view class="log-date">
   {{item.date.formatValue}}  
   </view>
-  <block wx:for="{{item.ids}}" wx:key="*this" wx:for-item="id">
+  <block wx:for="{{tools.reverse(item.ids)}}" wx:key="*this" wx:for-item="id">
     <log-item logData="{{store.log.items[id]}}"/>
   </block>
 </block>

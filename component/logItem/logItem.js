@@ -16,7 +16,8 @@ Component({
    */
   methods: {
     onClear() {
-      deleteOneLog(this.properties.logData.id)
+      console.log(this.data,this.properties)
+      deleteOneLog(this.properties.logData.id,this.properties.logData.date)
     }
   }
 })

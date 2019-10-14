@@ -17,5 +17,6 @@ const initialTodoData = {
 const todoData = wx.getStorageSync('todo') || initialTodoData
 // });
 export const store = {
-  data: todoData
+  data: todoData,
+  debug: false
 }

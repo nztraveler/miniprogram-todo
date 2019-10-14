@@ -24,5 +24,10 @@
       }
     ]
   },
+  "window": {
+    "navigationBarBackgroundColor": "#7ED321",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "Todo"
+  },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,4 +1,10 @@
 /* pages/log/log.wxss */
 .log-container {
-  margin: 20rpx;
+  margin: 40rpx 20rpx;
+}
+
+.log-date{
+  margin: 20rpx 0;
+  padding-left: 10rpx;
+  border-left: 10rpx solid #7ED321;
 }

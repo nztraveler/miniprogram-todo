@@ -3,5 +3,6 @@
     "quick-create-input": "../../component/quickCreate/input",
     "todo-item": "../../component/todoItem/todoItem",
     "aaa-input": "../../component/input/input"
-  }
+  },
+  "navigationBarTitleText": "Todo-代办"
 }
