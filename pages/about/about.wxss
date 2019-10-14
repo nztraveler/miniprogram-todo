@@ -1,0 +1,19 @@
+/* pages/about/about.wxss */
+.avatar{
+  margin-top: 100rpx;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.setting-container{
+  padding: 40rpx 30rpx;
+}
+.setting-item{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ddd;
+  font-size: 36rpx;
+}

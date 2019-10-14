@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/about/about",
     "pages/index/index",
     "pages/create/create",
-    "pages/log/log"
+    "pages/log/log",
+    "pages/about/me/me"
   ],
   "tabBar": {
     "color": "#9B9B9B",
@@ -21,6 +23,12 @@
         "text": "History",
         "iconPath": "assets/history.png",
         "selectedIconPath": "assets/history-active.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "Me",
+        "iconPath": "assets/me.png",
+        "selectedIconPath": "assets/me-active.png"
       }
     ]
   },

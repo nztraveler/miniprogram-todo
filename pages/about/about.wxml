@@ -1,0 +1,14 @@
+<!-- pages/about/about.wxml -->
+<view class="avatar">
+  <open-data type="userAvatarUrl"></open-data>
+</view>
+<view class="setting-container">
+  <view class="setting-item" bind:tap="onUserInfo">
+    <text class="">个人信息</text>
+    <text class="">→</text>
+  </view>
+  <view class="setting-item" bind:tap="onSetting">
+    <text class="">设置</text>
+    <text class="">→</text>
+  </view>
+</view>

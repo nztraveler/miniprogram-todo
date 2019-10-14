@@ -1,17 +1,24 @@
 //app.js
 import { store } from './store/store';
 App({
+  globalData:{
+    userInfo: null
+  },
   onLaunch() {
-    // wx.getStorage({
-    //   key: 'todo',
-    //   success: (result) => {
-    //     store.data = result;
-    //     console.log('获取storage成功', result)
-    //   },
-    //   fail: () => {
-    //     console.log('获取storage失败')
-    //   },
-    //   complete: () => { }
-    // });
+    wx.getSetting({
+      success: res=>{
+        if(res.authSetting['scope.userInfo']){
+          wx.wx.getUserInfo({
+            success: (res) => {
+              this.globalData.userInfo = res.userInfo
+              if(this.userInfoReadyCallback){
+                this.userInfoReadyCallback(res)
+              }
+            }
+          });
+            
+        }
+      }
+    })
   }
 })

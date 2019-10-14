@@ -1,0 +1,8 @@
+<!--pages/about/me/me.wxml-->
+<text>pages/about/me/me.wxml</text>
+<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">获取头像昵称</button>
+<block wx:else>
+  <image class="" src="{{userInfo.avatarUrl}}" mode="cover" />
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</block>
+  
