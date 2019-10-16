@@ -1,9 +1,43 @@
 /**app.wxss**/
 
 page {
-  color: #9B9B9B;
+  color: #9b9b9b;
 }
 
 .container {
   margin: 20rpx;
+}
+
+.empty-tips {
+  margin-top: 300rpx;
+}
+
+.empty-tips text {
+  display: block;
+  text-align: center;
+  color: #9b9b9b;
+}
+
+.empty-tips text:first-of-type {
+  font-size: 56rpx;
+  margin-bottom: 30rpx;
+}
+
+.setting-container {
+  padding: 40rpx 30rpx;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #ddd;
+  font-size: 34rpx;
+}
+
+.setting-avatar {
+  width: 100rpx;
+  height: 100rpx;
 }

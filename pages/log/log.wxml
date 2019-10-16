@@ -1,4 +1,4 @@
-<!--pages/log/log.wxml-->
+<!-- pages/log/log.wxml -->
 <wxs module="tools">
   var reverse = function(arr){
     return arr.reverse();
@@ -7,14 +7,17 @@
     reverse: reverse
   }
 </wxs>
-
 <view class="log-container">
-  <block wx:for="{{tools.reverse(store.log.dateSort)}}" wx:key="*this.date.value">
-  <view class="log-date">
-  {{item.date.formatValue}}  
-  </view>
-  <block wx:for="{{tools.reverse(item.ids)}}" wx:key="*this" wx:for-item="id">
-    <log-item logData="{{store.log.items[id]}}"/>
+  <block wx:if="{{store.log.dateSort.length<=0}}">
+    <block wx:for="{{tools.reverse(store.log.dateSort)}}" wx:key="*this.date.value">
+      <view class="log-date">{{item.date.formatValue}}</view>
+      <block wx:for="{{tools.reverse(item.ids)}}" wx:key="*this" wx:for-item="id">
+        <log-item logData="{{store.log.items[id]}}" isShowTime="{{store.setting.showLogTime}}" />
+      </block>
+    </block>
   </block>
-</block>
+  <view wx:else class="empty-tips">
+    <text>抱歉</text>
+    <text>暂无历史记录</text>
+  </view>
 </view>

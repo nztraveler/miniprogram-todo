@@ -1,5 +1,6 @@
 <!-- component/logItem/logItem.wxml -->
 <view class="log-item">
+  <text wx:if="{{isShowTime}}" class="log-item--time">{{logData.date.formatTime}}</text>
   <text class="log-item--action">{{logData.action}}</text>
   <text class="log-item--content">{{logData.content}}</text>
   <icon class="log-item--clear" type="clear" size="16" bind:tap="onClear"/>

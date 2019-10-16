@@ -11,9 +11,9 @@
       </block>
     </view>
     <view class="option-area">
-      <text bind:tap="onToggleAll">{{store.todo.unFinishedCount>0?'全部完成':'全部重启' }}</text>
+      <text wx:if="{{store.setting.allowCheckAll}}" bind:tap="onToggleAll">{{store.todo.unFinishedCount>0?'全部完成':'全部重启' }}</text>
       <text wx:if="{{store.todo.unFinishedCount>0}}"> {{store.todo.unFinishedCount}}未完成</text>
-      <text bind:tap="onDeleteAllFinished">清空所有已完成</text>
+      <text wx:if="{{store.setting.allowClearAll}}" bind:tap="onDeleteAllFinished">清空所有已完成</text>
     </view>
   </view>
   <view wx:else class="empty-tips">

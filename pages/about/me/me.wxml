@@ -1,8 +1,14 @@
-<!--pages/about/me/me.wxml-->
-<text>pages/about/me/me.wxml</text>
-<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">获取头像昵称</button>
-<block wx:else>
-  <image class="" src="{{userInfo.avatarUrl}}" mode="cover" />
-  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-</block>
-  
+<!-- pages/about/me/me.wxml -->
+<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">
+  获取头像昵称
+</button>
+<view wx:else class="setting-container">
+  <view class="setting-item" bind:tap="onUserInfo">
+    <text class="">设置头像</text>
+    <image class="setting-avatar" src="{{userInfo.avatarUrl}}" mode="cover" />
+  </view>
+  <view class="setting-item">
+    <text class="">设置用户名</text>
+    <text class="">{{userInfo.nickName}}</text>
+  </view>
+</view>

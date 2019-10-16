@@ -1,0 +1,6 @@
+/* pages/about/setting/setting.wxss */
+.setting-title{
+  margin: 20rpx 0;
+  padding-left: 10rpx;
+  border-left: 10rpx solid #7ED321;
+}

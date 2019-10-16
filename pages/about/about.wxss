@@ -8,12 +8,3 @@
   border-radius: 50%;
   overflow: hidden;
 }
-.setting-container{
-  padding: 40rpx 30rpx;
-}
-.setting-item{
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1rpx solid #ddd;
-  font-size: 36rpx;
-}

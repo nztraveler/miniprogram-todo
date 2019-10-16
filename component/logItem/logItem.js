@@ -1,5 +1,4 @@
-import actionList from '../../store/action.js';
-const {deleteOneTodo, finishToggleOne, finishToggleAll, deleteAllFinished, deleteOneLog} = actionList;
+import {deleteOneLog} from '../../store/action/index.js';
 
 Component({
   /**
@@ -8,6 +7,10 @@ Component({
   properties: {
     logData: {
       type: Object
+    },
+    isShowTime:{
+      type: Boolean,
+      value: true
     }
   },
 
@@ -16,7 +19,6 @@ Component({
    */
   methods: {
     onClear() {
-      console.log(this.data,this.properties)
       deleteOneLog(this.properties.logData.id,this.properties.logData.date)
     }
   }

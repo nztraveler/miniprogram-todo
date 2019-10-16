@@ -9,15 +9,8 @@ Component({
     },
 
   },
-  // properties: {
-  //   defaultValue: {
-  //     type: String,
-  //     value: ''
-  //   }
-  // },
 
   onConfirm(e) {
-    console.log('onConfirm', e)
     const value = e.detail.value;
     if (!value) return;
     this.triggerEvent('createItem', { value })
@@ -26,7 +19,6 @@ Component({
 
   methods: {
     onConfirm(e) {
-      console.log('onConfirm', e)
       const value = e.detail.value;
       if (!value) return;
       this.triggerEvent('createItem', { value })

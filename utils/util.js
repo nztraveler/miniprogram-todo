@@ -1,14 +1,16 @@
 export const getFormatDate = (value) => {
   const date = value ? new Date(value) : new Date();
-  // console.log(getFormatDate, {date});
   const day = date.getDate();
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
-  const minute = date.getMinutes();
-  console.log({minute})
+  let hour = date.getHours();
+  hour = hour < 10 ? `0${hour}` : hour;
+  let minute = date.getMinutes();
+  minute = minute < 10 ? `0${minute}` : minute;
   return {
     value: date.valueOf(),
-    formatValue: `${year}-${month}-${day}-${minute}分钟`
+    formatValue: `${year}-${month}-${day}`,
+    formatTime: `${hour}:${minute}`
   }
 }
 

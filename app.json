@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/about/about",
     "pages/index/index",
     "pages/create/create",
     "pages/log/log",
-    "pages/about/me/me"
+    "pages/about/about",
+    "pages/about/me/me",
+    "pages/about/setting/setting"
   ],
   "tabBar": {
     "color": "#9B9B9B",

@@ -21,7 +21,6 @@
 
 .todo-item__check-icon{
   text-align: center;
-  /* width: 120rpx; */
   flex: 0 0 120rpx; 
 }
 
@@ -30,5 +29,4 @@
 }
 .todo-item__delete-icon {
   margin:0 10rpx;
-  /* flex: 1 0 40rpx; */
 }

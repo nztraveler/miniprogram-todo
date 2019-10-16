@@ -1,0 +1,19 @@
+<!-- pages/about/setting/setting.wxml -->
+<view class="setting-container">
+  <text class="setting-title">待办</text>
+  <view class="setting-item">
+    <text>允许全选：</text>
+    <switch checked="{{store.setting.allowCheckAll}}" type="switch" bindchange="onCheckAllChange"></switch>
+  </view>
+  <view class="setting-item">
+    <text>允许清空所有已完成</text>
+    <switch checked="{{store.setting.allowClearAll}}" type="switch" bindchange="onClearAllChange"></switch>
+  </view>
+</view>
+<view class="setting-container">
+  <text class="setting-title">历史</text>
+  <view class="setting-item">
+    <text>显示操作时间</text>
+    <switch checked="{{store.setting.showLogTime}}" type="switch" bindchange="onShowTimeChange"></switch>
+  </view>
+</view>

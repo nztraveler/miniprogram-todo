@@ -4,7 +4,6 @@ Component({
     item: {
       type: Object,
     },
-
   },
 
   data: {
