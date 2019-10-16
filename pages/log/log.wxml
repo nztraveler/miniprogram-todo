@@ -8,7 +8,7 @@
   }
 </wxs>
 <view class="log-container">
-  <block wx:if="{{store.log.dateSort.length<=0}}">
+  <block wx:if="{{store.log.dateSort.length>0}}">
     <block wx:for="{{tools.reverse(store.log.dateSort)}}" wx:key="*this.date.value">
       <view class="log-date">{{item.date.formatValue}}</view>
       <block wx:for="{{tools.reverse(item.ids)}}" wx:key="*this" wx:for-item="id">
